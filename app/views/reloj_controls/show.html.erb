@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="display-4">Detalle</h1>
+<hr>
+
+<div class="card" style="width: 18rem;">
+    <% if @reloj_control.image.attached? %>
+      <%= image_tag (@reloj_control.image), class:"card-img-top", width: "100px" %>
+    <% end %>
+  <div class="card-body">
+    <h5 class="card-title"><%= @reloj_control.marca %> | <%= @reloj_control.modelo %></h5>
+    <p>
+      <strong>Color:</strong>
+      <%= @reloj_control.color %>
+    </p>
+    <p class="card-text"><%= @reloj_control.caracteristicas %></p>
+    <%= link_to 'Editar', edit_reloj_control_path(@reloj_control), class: "btn btn-outline-warning" %> |
+    <%= link_to 'Volver', reloj_controls_path, class: "btn btn-outline-secondary" %>
+  </div>
+</div>
+
+</div>

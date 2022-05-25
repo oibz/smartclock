@@ -1,0 +1,45 @@
+<%= form_with(model: reloj_control) do |form| %>
+  <% if reloj_control.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(reloj_control.errors.count, "error") %> prohibited this reloj_control from being saved:</h2>
+
+      <ul>
+        <% reloj_control.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :marca %>
+    <%= form.text_field :marca, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :modelo %>
+    <%= form.text_field :modelo, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :color %>
+    <%= form.text_field :color, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :caracteristicas %>
+    <%= form.text_area :caracteristicas, class: "form-control" %>
+  </div>
+
+<br>
+
+<div class="form-group">
+  <%= form.label :imagen %>
+  <%= form.file_field :image, class: "form-control" %>
+</div>
+
+
+  <div class="actions">
+    <%= form.submit  %>
+  </div>
+<% end %>
